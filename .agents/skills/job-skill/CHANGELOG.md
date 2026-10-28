@@ -1,0 +1,26 @@
+# Changelog
+- F1: Quoted description string in SKILL.md frontmatter to fix invalid unquoted YAML mapping error.
+- F2: Verified mcp_config.json retained StitchMCP intact, created backup mcp_config.json.bak, and audited servers attaching to port 9222.
+- F3: Audited mcp-server-sqlite@0.0.2 (repository verified, published Sep 2025); documented tool names and foreign_keys instruction in SKILL.md.
+- F4: Verified file upload sequence and --allow-unrestricted-file-access necessity; added "Uploading a file" section to boards.md, added rule H14 to SKILL.md, deleted test file.
+- F5: Added rule H15 to SKILL.md enforcing dedicated tabs opened by agent only.
+- F6: Removed global junction C:\Users\Ajay_lap\.gemini\config\skills\job-skill with cmd rmdir, preserving workspace junction.
+- F7: Added --output-dir=c:/job-search/_pw-output to playwright MCP config to keep project folder free of .playwright-mcp artifacts.
+- F8: Updated BUILD_REPORT.md with honest verdicts (14 PASS, 3 PARTIAL, 2 NOT TESTED, 0 FAIL), full file listing, secret search output, and rule changes.
+- F9: Scanned all files in job-skill for secrets (found 0), verified mcp-config-snippet.json excludes StitchMCP, deleted all round 1 scratch test scripts, and confirmed clean re-scan.
+- F10: Replaced PRAGMA instruction in SKILL.md under SQL access with parent-before-child relational discipline rule while retaining query, execute, and transaction tools.
+- F11: Audited mcp_servers.md schema, confirmed cwd is unsupported in mcp_config.json, verified --allow-unrestricted-file-access necessity due to root denial outside C:\Users\Ajay_lap, and retained rule H14.
+- F12: Verified --output-dir=c:/job-search/_pw-output routes auto-named YAML and PNG outputs to _pw-output and confirmed no .playwright-mcp folder in job-skill.
+- F13: Verified native Antigravity call_mcp_tool execution for playwright browser_tabs (PASS), and diagnosed native sqlite failure as mcp-server-sqlite logging PRAGMAs to stdout.
+- F14: Updated BUILD_REPORT.md with Fix Round 2 section, updated summary table (15 PASS, 2 PARTIAL, 2 NOT TESTED, 0 FAIL), annotated harness vs native tests, and updated CHANGELOG.md.
+- F15: Backed up mcp_config.json to mcp_config.json.bak2, removed sqlite server from configs, and replaced SQL access in SKILL.md with verbatim sqlite3 CLI specification.
+- F16: Proved sqlite3 CLI path on data/test.sqlite (T16a-T16f pass: 13 settings, FK enforcement, UTF-8 codepoint 8217, doubled quotes, atomic rollback with -bail, and triggers hold).
+- F17: Configured playwright via cmd cd /d to job-skill, verified upload of cv/out/test.pdf passes and outside-test.pdf is denied, dropped --allow-unrestricted-file-access, and updated boards.md.
+- F18: Recorded honest tab and process account (initial build tab overwrite acknowledged, dedicated tabs enforced subsequently, killed processes documented).
+- F19: Updated BUILD_REPORT.md for Fix Round 3 under 12 KB (9.15 KB) with full test evidence, F15-F18 sections, and updated CHANGELOG.md.
+- F20: Removed UTF-8 BOM from mcp_config.json via WriteAllText UTF8NoBOM, confirmed snippet clean, verified JSON parsing and server names (StitchMCP, playwright), and established rule never to use Set-Content -Encoding UTF8 on JSON files in PS 5.1.
+- F21: Formatted exact raw outputs of T16a-T16f and F17 upload tests for presentation in reply.
+- F22: Updated BUILD_REPORT.md marking T15 as harness only with native check pending, documented PSVersion 5.1.26100.9711 and F20 BOM results, and maintained report size at 10.1 KB.
+- F23: Backed up mcp_config.json to .bak3, narrowed playwright cwd to c:\job-search\job-skill\cv without BOM, verified 3-part upload wall (cv/out/test.pdf allowed; career.sqlite denied; outside-test.pdf denied), updated boards.md and snippet, and rewrote rule H14 in SKILL.md.
+- F24: Added busy_timeout row notice ([{"timeout":5000}]) to SQL access section in SKILL.md.
+- F25: Updated BUILD_REPORT.md aligning summary counts (15 PASS, 2 PARTIAL, 2 NOT TESTED, 0 FAIL) with test table, classified T15 as PARTIAL, documented full native tab account and process kill history, and confirmed size at 9.5 KB.

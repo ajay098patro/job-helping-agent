@@ -1,0 +1,65 @@
+{
+  "_readme": "Candidate Truth Profile. Filled via onboard.js or agent onboarding interview. null means unknown: ask, never guess.",
+  "identity": {
+    "full_name": "Full Name",
+    "first_name": "First Name",
+    "email": "email@example.com",
+    "phone": "+91-0000000000",
+    "phone_availability": "After 1:00 PM IST",
+    "current_location": "India",
+    "linkedin_url": "",
+    "github_url": ""
+  },
+  "work_facts": {
+    "total_experience_years": 0,
+    "current_ctc_lpa": 0.0,
+    "expected_ctc_lpa": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "notice_period_days": 30,
+    "current_company": "",
+    "current_title": "",
+    "willing_to_relocate": true,
+    "work_authorization_india": true,
+    "work_authorization_outside_india": "Open to relocation with employer visa sponsorship"
+  },
+  "target_roles": [],
+  "skills_core": [],
+  "skills_technical": {
+    "languages": [],
+    "frameworks": [],
+    "databases": [],
+    "tools": []
+  },
+  "previous_employment": [],
+  "education": [],
+  "certifications": [],
+  "projects": [],
+  "highlights": [],
+  "preferred_locations": [
+    "India",
+    "Remote"
+  ],
+  "allowed_domains": [
+    "linkedin.com",
+    "naukri.com",
+    "instahyre.com",
+    "google.com",
+    "myworkdayjobs.com",
+    "greenhouse.io",
+    "lever.co",
+    "smartrecruiters.com"
+  ],
+  "cv": {
+    "master_tex": "job-skill/cv/master.tex",
+    "existing_pdf": "career-ops/resume.pdf",
+    "output_dir": "job-skill/cv/out",
+    "output_filename": "CV.pdf"
+  },
+  "personal_line_max_words": 25,
+  "templates": {
+    "recruiter_email": "Dear Hiring Team,\n\nI am writing regarding open opportunities with your engineering team.\n\nQuick overview of my relevant experience:\n{core_skills_summary}\n\nI have attached my CV for your review. I would welcome the opportunity to connect and discuss how my background can contribute to your team.\n\nRegards\n{full_name}\n{phone}\n{email}"
+  }
+}
+

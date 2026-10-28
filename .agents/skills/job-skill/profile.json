@@ -1,0 +1,245 @@
+{
+  "_readme": "Facts and templates. Only the user edits this file. null means unknown: ask, never guess.",
+  "identity": {
+    "full_name": "Ajay Kumar Patro",
+    "first_name": "Ajay",
+    "email": "ajay789patro@outlook.com",
+    "phone": "+91-7894464335",
+    "phone_availability": "After 1:00 PM IST",
+    "current_location": "India",
+    "linkedin_url": "https://www.linkedin.com/in/ajay-patro-933659190/",
+    "github_url": "https://github.com/ajay098patro"
+  },
+  "work_facts": {
+    "total_experience_years": 3,
+    "current_ctc_lpa": 3.6,
+    "expected_ctc_lpa": {
+      "min": 10,
+      "max": 13
+    },
+    "notice_period_days": 30,
+    "current_company": "Monarch Surveyors & Engineering Consultants Ltd",
+    "current_title": "GIS Analyst",
+    "willing_to_relocate": true,
+    "work_authorization_india": null,
+    "work_authorization_outside_india": "None currently; open to relocation, the decision rests with the employer"
+  },
+  "target_roles": [
+    "GIS Engineer",
+    "Geospatial Engineer",
+    "Python Backend Developer"
+  ],
+  "skills_core": [
+    "GIS implementation",
+    "Python / ArcPy automation",
+    "PostgreSQL / PostGIS",
+    "GeoServer infrastructure",
+    "Keycloak / OIDC-secured services"
+  ],
+  "skills_technical": {
+    "languages": [
+      "Python",
+      "SQL",
+      "JavaScript",
+      "Bash"
+    ],
+    "frameworks": [
+      "Django",
+      "FastAPI"
+    ],
+    "databases": [
+      "PostgreSQL/PostGIS",
+      "MySQL",
+      "SQLite"
+    ],
+    "database_engineering": [
+      "Spatial SQL",
+      "Query Optimization",
+      "Indexing",
+      "Schema Design",
+      "Database Migrations"
+    ],
+    "gis_tools": [
+      "ArcGIS Pro",
+      "ArcMap",
+      "QGIS",
+      "PyQGIS",
+      "ArcPy",
+      "GDAL/OGR",
+      "Orfeo ToolBox",
+      "Geopandas",
+      "Google Earth Engine",
+      "PDAL"
+    ],
+    "gis_services": [
+      "GeoServer",
+      "Martin",
+      "pg_tileserv",
+      "TiTiler"
+    ],
+    "infrastructure_and_tools": [
+      "Docker",
+      "Docker Compose",
+      "Linux",
+      "IIS",
+      "Apache",
+      "Tomcat",
+      "Nginx",
+      "Git",
+      "GitHub"
+    ],
+    "backup_and_auth": [
+      "pgBackRest (PITR)",
+      "Cloudflare R2",
+      "Keycloak/OIDC"
+    ]
+  },
+  "previous_employment": [
+    {
+      "company": "Lepton Software Export & Research Pvt. Ltd.",
+      "title": "GIS Specialist (Python Data Ops Automation)",
+      "location": "Pune, Maharashtra, India",
+      "dates": "Apr 2024 -- May 2025",
+      "project": "GOFNMS Tele Infra (telecom network data processing)"
+    },
+    {
+      "company": "NIRD & PR NERC",
+      "title": "Scientific Intern (C-GARD, NIRDPR)",
+      "location": "Guwahati, Assam",
+      "dates": "Mar 2023 -- Jul 2023"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Central University of Karnataka",
+      "degree": "M.Sc. in Applied Geography & Geoinformatics",
+      "location": "Kalaburagi, India",
+      "dates": "Nov 2021 -- Aug 2023",
+      "coursework": "GeoAI, LULC classification (supervised and unsupervised), hydrological and basin morphometric analysis (hypsometric integral, HRI/HRS), soil erosion modeling (USLE, MUSLE), geostatistics (hotspot analysis, spatial autocorrelation), geocoding, reverse geocoding, and multi-criteria decision analysis (MCDA) for site suitability."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CS50 Python Certificate",
+      "institution": "Harvard's OCW CS50, Cambridge, Massachusetts",
+      "dates": "2023 -- 2024",
+      "url": "https://cs50.harvard.edu/certificates/7ba41367-a931-47cb-ac47-ccba96f4048d"
+    },
+    {
+      "name": "CS50 SQL Certificate",
+      "institution": "Harvard's OCW CS50, Cambridge, Massachusetts",
+      "dates": "2025",
+      "url": "https://cs50.harvard.edu/certificates/0f4666c7-f10d-430c-92e9-933fb996e84f"
+    },
+    {
+      "name": "ArcGIS Enterprise MOOC",
+      "institution": "Esri",
+      "dates": "2026 -- Present"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Secure Vector-Tile Serving Platform: Martin + APISIX + Keycloak",
+      "status": "In Progress",
+      "tech_stack": [
+        "Martin",
+        "PostgreSQL/PostGIS",
+        "Docker Compose",
+        "Apache APISIX",
+        "Keycloak/OIDC"
+      ]
+    },
+    {
+      "title": "End-to-End AI Burn Scar Detection Pipeline",
+      "status": "Ongoing",
+      "tech_stack": [
+        "PyTorch",
+        "Apache Airflow",
+        "STAC Catalog",
+        "FastAPI",
+        "PostGIS",
+        "GeoServer",
+        "Rasterio",
+        "GeoPandas"
+      ]
+    },
+    {
+      "title": "Spectral–Index Feature Engineering / OBIA Pipeline",
+      "tech_stack": [
+        "QGIS Model Builder",
+        "Orfeo ToolBox"
+      ]
+    },
+    {
+      "title": "LiDAR Point-Cloud Web Viewer (Potree, Range-Aware HTTP Streaming)",
+      "tech_stack": [
+        "Django",
+        "Potree",
+        "Flask"
+      ],
+      "github_url": "https://github.com/ajay098patro/lidar-potree-range-streaming"
+    },
+    {
+      "title": "Football Field Booking Management System (CS50 SQL Capstone)",
+      "tech_stack": [
+        "MySQL"
+      ],
+      "github_url": "https://github.com/ajay098patro/Football-Field-Booking-Management-System-CS50-SQL-Final-Project"
+    }
+  ],
+  "highlights": [
+    "Deployed a two-node GeoServer setup",
+    "Implemented database backup and recovery"
+  ],
+  "preferred_locations": [
+    "India",
+    "Remote"
+  ],
+  "allowed_domains": [
+    "linkedin.com",
+    "naukri.com",
+    "instahyre.com",
+    "google.com",
+    "myworkdayjobs.com",
+    "greenhouse.io",
+    "lever.co",
+    "smartrecruiters.com"
+  ],
+  "cv": {
+    "master_tex": "cv/master.tex",
+    "existing_pdf": "cv/Ajay_Patro_CV.pdf",
+    "output_dir": "cv/out",
+    "output_filename": "Ajay_Patro_CV.pdf"
+  },
+  "personal_line_max_words": 25,
+  "templates": {
+    "_approved_by_user": [
+      "first_message",
+      "second_ask"
+    ],
+    "_draft_needs_user_approval": [
+      "connect_note",
+      "third_message_india_contact",
+      "third_message_outside_india_contact",
+      "follow_up",
+      "recruiter_email"
+    ],
+    "_placeholder_rule": "{personal_line} is the personal sentence followed by a blank line, or removed entirely when there is none.",
+    "first_message": "Hi {first_name},\n\n{personal_line}I'm exploring new opportunities at {company}. I have professional experience in GIS implementation, Python/ArcPy automation, PostgreSQL/PostGIS, GeoServer infrastructure, and Keycloak/OIDC-secured services, including deploying a two-node GeoServer setup and implementing database backup and recovery.\n\nGiven my background, would you be open to referring me for a suitable opportunity at {company}? I have attached my CV for your consideration.\n\nBest,\nAjay",
+    "second_ask": "Thanks, I'll review the openings and identify a role that aligns with my experience. If I find a suitable position, would you be willing to refer me for that specific role? I can share the job link and my CV to make it easier.",
+    "connect_note": "Hi {first_name}, I came across your profile and work in geospatial technology. I specialize in GIS, PostGIS database schemas, and Python data pipelines. Would welcome connecting with you. Best, Ajay",
+    "third_message_india_contact": "Thank you, {first_name}. Here are the roles at {company} in India that match my background:\n{india_roles}\nI'll send my CV with whichever one you can refer me for.",
+    "third_message_outside_india_contact": "Thank you, {first_name}. Based on my profile, would it be possible for me to be considered for a role at your office in {contact_location}? I'm currently in India and don't hold a work visa for {contact_country}, so that would be your call, and I'm happy to go with whatever is feasible.\n{company} roles in {contact_location}:\n{local_roles}\nIf that isn't workable, these are the roles in India:\n{india_roles}\nI'll send my CV with whichever one you can refer me for.",
+    "follow_up": "Hi {first_name}, a gentle follow-up on my earlier note. If there is a suitable opening at {company}, I would be grateful for a referral, and I am happy to send my CV. Thank you either way.",
+    "recruiter_email_subject": "Resume: Geospatial & Python Backend Engineer - Ajay Patro",
+    "recruiter_email": "Dear Hiring Team,\n\nI am writing regarding engineering opportunities with your team.\n\nQuick overview of my relevant experience:\n- PostgreSQL & PostGIS: 3+ years hands-on experience in spatial schema design, GiST indexing, and query optimization.\n- Python Backend: Automated ETL pipelines (GDAL, Geopandas) and REST APIs.\n\nI have attached my CV (Ajay_Patro_CV.pdf) for your review. I would welcome the opportunity to connect and discuss how my spatial backend background can contribute to your team.\n\nRegards\nAjay Kumar Patro\n+91-7894464335\najay789patro@outlook.com",
+    "replies": {
+      "call": "Hi {first_name}, I would be happy to connect. You can reach me tomorrow anytime after 1pm IST at +91-7894464335.",
+      "notice": "Hi {first_name}, my notice period is 30 days, and I am available for technical rounds.",
+      "ctc": "Hi {first_name}, my current CTC is 3.6 LPA and my expected CTC is 10-13 LPA.",
+      "location": "Hi {first_name}, I am primarily targeting Hyderabad, Bengaluru, Chennai, and Remote/Hybrid, and open to evaluating other locations based on role scope and compensation structure.",
+      "cv_already_shared": "Hi {first_name}, as shared earlier in our conversation, my CV is attached above. Please let me know if you need any additional details.",
+      "cv_attach": "Hi {first_name}, I have attached my resume (Ajay_Patro_CV.pdf) for your review. Looking forward to hearing your thoughts."
+    }
+  }
+}

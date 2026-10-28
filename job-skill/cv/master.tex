@@ -1,0 +1,257 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{fontawesome5}
+\usepackage{lmodern}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\vspace{-80pt}
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Ajay Kumar Patro} \\ \vspace{1pt}
+    \small
+    \faPhone\ +91 7894464335 \quad | \quad
+    \faEnvelope\ \href{mailto:ajay789patro@outlook.com}{ajay789patro@outlook.com} \quad | \quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/ajay-patro-933659190/}{linkedin} \quad | \quad
+    \faGithub\ \href{https://github.com/ajay098patro}{github.com/ajay098patro} \\ \vspace{2pt}
+    GIS Backend \& Geospatial Data Engineer \quad | \quad PostGIS, Python, GeoServer, Keycloak
+\end{center}
+\vspace{-16pt}
+
+ 
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:}{ Python, SQL, JavaScript, Bash} \\
+     \textbf{Frameworks:}{ Django, FastAPI} \\
+     \textbf{Databases:}{ PostgreSQL/PostGIS, MySQL, SQLite} \\
+     \textbf{Database Engineering:}{ Spatial SQL, Query Optimization, Indexing, Schema Design, Database Migrations} \\
+     \textbf{GIS:}{ \\
+        \hspace{1em}\textbf{Tools:}{ ArcGIS Pro, ArcMap, QGIS, PyQGIS, ArcPy, GDAL/OGR, Orfeo ToolBox, Geopandas, Google Earth Engine, PDAL}\\
+        \hspace{1em}\textbf{Services:}{ GeoServer, Martin, pg\_tileserv, TiTiler}
+     } \\
+     \textbf{Infrastructure \& Tools:}{ Docker, Docker Compose, Linux, IIS, Apache, Tomcat, Nginx, Git, GitHub} \\
+     \textbf{Backup \& Auth:}{ pgBackRest (PITR), Cloudflare R2, Keycloak/OIDC}
+    }}
+ \end{itemize}
+
+ \vspace{-19pt}
+
+
+%-----------EXPERIENCE-----------      
+\section{Experience}
+  \resumeSubHeadingListStart
+\resumeSubheading
+{GIS Analyst}{Mar 2026 -- Present}
+{Monarch Surveyors \& Engineering Consultants Ltd}{Nashik, Maharashtra, India}
+
+\resumeItemListStart
+\resumeItem{Deployed a 2-node \textbf{GeoServer} cluster for a state government agency behind \textbf{IIS} (reverse proxy) with \textbf{Apache Tomcat}, \textbf{Keycloak}/OIDC and HTTPS/SSL, using an \textbf{SMB} share over the existing \textbf{SAN} as a common data directory.}
+\resumeItem{Wrote a \textbf{batch script} to deploy primary and secondary nodes, remove existing installations, and promote either node to primary, enabling manual failover in 10--20 minutes, within the client's 1-hour downtime tolerance.}
+\resumeItem{Designed and set up PostgreSQL/PostGIS backup and recovery from scratch using \textbf{pgBackRest} with \textbf{Cloudflare R2}, with weekly full backups and \textbf{point-in-time recovery (PITR)} for a $\sim$9\,GB database; adopted by the team.}
+\resumeItem{Managed \textbf{PostgreSQL/PostGIS} and \textbf{GeoServer} for a multi-tenant LRMS platform supporting government land acquisition and infrastructure projects, including spatial schema design and ingestion, transformation and validation of survey, drawing and \texttt{.shp} datasets.}
+\resumeItem{Converted drone imagery from \texttt{.ecw} to Cloud Optimized GeoTIFFs (COGs) with internal overviews and quantized alpha bands, and published raster and vector layers through \textbf{GeoServer} (WMS/WFS/ImageMosaic) for dashboard web maps.}
+\resumeItem{Fixed geometry, SRID and topology problems in \textbf{PostGIS} and debugged spatial SQL, raster rendering and data-sync issues across \textbf{PostGIS} and \textbf{GeoServer}.}
+\resumeItemListEnd
+      
+      
+      \resumeSubheading
+  {GIS Specialist (Python Data Ops Automation)}{Apr 2024 -- May 2025}
+  {Lepton Software Export \& Research Pvt. Ltd.}{Pune, Maharashtra, India}
+
+\resumeItemListStart
+  \resumeItem{\textbf{Project:} GOFNMS Tele Infra (telecom network data processing)}
+  \resumeItem{Populated and maintained fibre-network records in the project database from stakeholder data: fibre direction, inside-plant (ISP) data, and subscriptions mapping each fibre to its \textbf{OTU/IPS} port.}
+  \resumeItem{Reconciled live \textbf{OTU/IPS} fibre data against the database, reviewed fibre-length mismatches flagged by \textbf{Enghouse NetDesigner} (ArcGIS-based), and reported them to the team responsible for corrections, supporting fault analysis.}
+  \resumeItem{Created inside-plant (ISP) records from field network engineers' reports to support telecom network inventory and planning.}
+  \resumeItem{Built Python (\textbf{ArcPy}) automation for daily spatial data processing, validation, and reporting.}
+\resumeItemListEnd
+
+      \resumeSubheading
+  {Scientific Intern (C-GARD, NIRDPR)}{Mar 2023 -- Jul 2023}
+  {NIRD \& PR NERC}{Guwahati, Assam}
+\resumeItemListStart
+\resumeItem{Maintained and validated geospatial datasets for infrastructure development planning, including ground assessments aligned with \textbf{RADFI 2017} guidelines.}
+\resumeItem{Delivered technical tutorials on the \textbf{Yuktadhara--Bhuvan Portal} to field officers across Assam and Meghalaya.}
+\resumeItem{Acted as a secondary-level reviewer for research papers in the ISBN-published C-GARD book, \textit{\textbf{Geoinformatics Application in Land, Water, and Infrastructure Development}}.}
+\resumeItemListEnd
+
+\vspace{-10pt}
+%-----------PROJECTS----------- 
+\section{Projects} 
+\vspace{-10pt}
+\resumeProjectHeading
+{\textbf{Secure Vector-Tile Serving Platform: Martin + APISIX + Keycloak (In Progress)}}{}
+\resumeItemListStart
+\resumeItem{\textbf{Tech Stack:}\textit{ Martin, PostgreSQL/PostGIS, Docker Compose, Apache APISIX, Keycloak/OIDC}}
+\resumeItem{Building a containerized service that serves vector tiles from \textbf{PostGIS} through \textbf{Martin}, with \textbf{Apache APISIX} enforcing \textbf{Keycloak}-based role and resource authorization before requests reach the tile server.}
+\resumeItem{Designing cached authorization decisions to keep per-request validation fast, and working out how cached tiles and decisions should stay correct when data or roles change.}
+\resumeItemListEnd
+
+\resumeProjectHeading 
+{\textbf{End-to-End AI Burn Scar Detection Pipeline (Ongoing)}}{} 
+\resumeItemListStart 
+\resumeItem{\textbf{Tech Stack:}\textit{ PyTorch, Apache Airflow, STAC Catalog, FastAPI, PostGIS, GeoServer, Rasterio, GeoPandas}} 
+\resumeItem{Developed an automated pipeline to ingest Sentinel-2 imagery via \href{https://dataspace.copernicus.eu/}{CDSE's} \textbf{STAC API} to detect wildfire burn scars using the \href{https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M-TL}{HuggingFace Model: ibm-nasa-geospatial Prithvi EO-2.0} Model.} 
+\resumeItem{Orchestrated end-to-end \textbf{ETL} workflows with Apache Airflow for preprocessing, inference, and spatial data loading into \textbf{PostGIS}.} 
+\resumeItem{Generated STAC-compliant metadata and published GIS-ready spatial outputs via \textbf{GeoServer}, exposing them through \textbf{FastAPI} as REST API endpoints for downstream analytics and visualization.} 
+\resumeItemListEnd 
+
+\resumeProjectHeading 
+{\textbf{Spectral--Index Feature Engineering / OBIA Pipeline}}{} 
+\resumeItemListStart 
+\resumeItem{Built an end-to-end \textbf{Object-Based Image Analysis (OBIA)} pipeline for satellite imagery, reducing land-cover mapping time by \textbf{$\sim$92\%} by deriving spectral-index--based object features for automated training label generation. Implemented using \textbf{QGIS Model Builder} and \textbf{Orfeo ToolBox}.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{LiDAR Point-Cloud Web Viewer (Potree, Range-Aware HTTP Streaming)}}
+ {\faGithub\ \href{https://github.com/ajay098patro/lidar-potree-range-streaming}{Source Code}}
+\resumeItemListStart
+\resumeItem{Built a web-based LiDAR point-cloud viewer using \href{https://github.com/potree/potree}{Potree} for large-scale multi-million point visualization. Engineered a range-aware static HTTP streaming server to replace Django static serving, enabling level-of-detail (LOD) octree loading, eliminating repeated full-file downloads, and optimizing browser memory and rendering performance. Implemented using Django, Potree and Flask.}
+\resumeItemListEnd
+
+\resumeProjectHeading 
+{\textbf{Football Field Booking Management System (CS50 SQL Capstone)}}
+ {\faGithub\ \href{https://github.com/ajay098patro/Football-Field-Booking-Management-System-CS50-SQL-Final-Project}{Source Code}}
+\resumeItemListStart 
+\resumeItem{Designed a normalized, ACID-compliant \textbf{MySQL} schema (10+ tables) with constraints, triggers and indexing; tuned queries with EXPLAIN.} 
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-8pt}
+%-----------EDUCATION-----------
+\section{Education}
+\small % keeps font readable and consistent
+\setlength{\itemsep}{1pt} % minimal spacing between entries
+\setlength{\parskip}{0pt}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Central University of Karnataka}{ Nov 2021 -- Aug 2023}{\hspace{1em}M.Sc. in Applied Geography \& Geoinformatics}{Kalaburagi, India}
+\vspace{0.1pt}
+\par
+{\scriptsize \textbf{Coursework:} \textbf{GeoAI}, \textbf{LULC} classification (supervised and unsupervised), \textbf{hydrological} and basin morphometric analysis (hypsometric integral, \textbf{HRI/HRS}), soil erosion modeling (\textbf{USLE}, \textbf{MUSLE}), \textbf{geostatistics} (hotspot analysis, spatial autocorrelation), geocoding, reverse geocoding, and \textbf{multi-criteria decision analysis} (MCDA) for site suitability.}
+
+\resumeSubHeadingListEnd
+
+\vspace{-13pt}
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\begin{itemize}[leftmargin=0.03in, label={}]
+\footnotesize
+\setlength\itemsep{2pt} % compact spacing
+\setlength\parskip{0pt} 
+
+\item {\textbf{CS50 Python Certificate} \hfill 
+      \faAward\ \href{https://cs50.harvard.edu/certificates/7ba41367-a931-47cb-ac47-ccba96f4048d}{View Certificate} \\
+      \hspace{1em}{Harvard's OCW CS50, Cambridge, Massachusetts} \hfill 2023 -- 2024}
+
+\item {\textbf{CS50 SQL Certificate}} \hfill 
+      \faAward\ \href{https://cs50.harvard.edu/certificates/0f4666c7-f10d-430c-92e9-933fb996e84f}{View Certificate} \\
+      \hspace{1em}{Harvard's OCW CS50, Cambridge, Massachusetts} \hfill 2025
+
+\item {\textbf{ArcGIS Enterprise MOOC} \hfill \\
+      \hspace{1em}{Esri} \hfill 2026 -- Present}
+
+\end{itemize}
+
+\end{document}
