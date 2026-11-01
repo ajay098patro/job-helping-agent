@@ -11,7 +11,7 @@
     "github_url": "https://github.com/ajay098patro"
   },
   "work_facts": {
-    "total_experience_years": 3,
+    "total_experience_years": 2.5,
     "current_ctc_lpa": 3.6,
     "expected_ctc_lpa": {
       "min": 10,
@@ -25,16 +25,20 @@
     "work_authorization_outside_india": "None currently; open to relocation, the decision rests with the employer"
   },
   "target_roles": [
-    "GIS Engineer",
-    "Geospatial Engineer",
-    "Python Backend Developer"
+    "Data Engineer",
+    "Database Engineer",
+    "Python Developer",
+    "Backend Engineer",
+    "Geospatial Data Engineer",
+    "GIS Engineer"
   ],
   "skills_core": [
-    "GIS implementation",
-    "Python / ArcPy automation",
+    "Data Engineering & ETL Pipelines",
+    "Database Engineering (PostgreSQL, SQL Query Optimization, Indexing, Schema Design)",
+    "Python Backend Development (FastAPI, Django, REST APIs)",
+    "Apache Airflow & Automated Pipelines",
     "PostgreSQL / PostGIS",
-    "GeoServer infrastructure",
-    "Keycloak / OIDC-secured services"
+    "GeoServer & Spatial Systems"
   ],
   "skills_technical": {
     "languages": [
@@ -232,7 +236,7 @@
     "third_message_outside_india_contact": "Thank you, {first_name}. Based on my profile, would it be possible for me to be considered for a role at your office in {contact_location}? I'm currently in India and don't hold a work visa for {contact_country}, so that would be your call, and I'm happy to go with whatever is feasible.\n{company} roles in {contact_location}:\n{local_roles}\nIf that isn't workable, these are the roles in India:\n{india_roles}\nI'll send my CV with whichever one you can refer me for.",
     "follow_up": "Hi {first_name}, a gentle follow-up on my earlier note. If there is a suitable opening at {company}, I would be grateful for a referral, and I am happy to send my CV. Thank you either way.",
     "recruiter_email_subject": "Resume: Geospatial & Python Backend Engineer - Ajay Patro",
-    "recruiter_email": "Dear Hiring Team,\n\nI am writing regarding engineering opportunities with your team.\n\nQuick overview of my relevant experience:\n- PostgreSQL & PostGIS: 3+ years hands-on experience in spatial schema design, GiST indexing, and query optimization.\n- Python Backend: Automated ETL pipelines (GDAL, Geopandas) and REST APIs.\n\nI have attached my CV (Ajay_Patro_CV.pdf) for your review. I would welcome the opportunity to connect and discuss how my spatial backend background can contribute to your team.\n\nRegards\nAjay Kumar Patro\n+91-7894464335\najay789patro@outlook.com",
+    "recruiter_email": "Dear Hiring Team,\n\nI am writing regarding engineering opportunities with your team.\n\nQuick overview of my relevant experience:\n- PostgreSQL & PostGIS: 2.5+ years hands-on experience in spatial schema design, GiST indexing, and query optimization.\n- Python Backend: Automated ETL pipelines (GDAL, Geopandas) and REST APIs.\n\nI have attached my CV (Ajay_Patro_CV.pdf) for your review. I would welcome the opportunity to connect and discuss how my spatial backend background can contribute to your team.\n\nRegards\nAjay Kumar Patro\n+91-7894464335\najay789patro@outlook.com",
     "replies": {
       "call": "Hi {first_name}, I would be happy to connect. You can reach me tomorrow anytime after 1pm IST at +91-7894464335.",
       "notice": "Hi {first_name}, my notice period is 30 days, and I am available for technical rounds.",

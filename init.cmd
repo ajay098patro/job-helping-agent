@@ -30,39 +30,20 @@ if not exist "job-skill\data\career.sqlite" (
     echo [OK] SQLite database exists: job-skill\data\career.sqlite
 )
 
-:: 4. Check for --new or --onboard flag
-if "%1"=="--new" goto DO_ONBOARD
-if "%1"=="--onboard" goto DO_ONBOARD
-if "%1"=="-n" goto DO_ONBOARD
-
-:: 5. Check if profile.json exists
+:: 4. Check if profile.json exists
 if not exist "job-skill\profile.json" (
     echo.
-    echo [NOTICE] No candidate profile detected. Starting interactive onboarding...
-    goto DO_ONBOARD
+    echo [NOTICE] No candidate profile detected. Copying profile.template.json...
+    copy "job-skill\profile.template.json" "job-skill\profile.json" >nul
+    echo [INFO] Created job-skill\profile.json. Please edit with candidate truth details.
 )
 
-:: If profile exists, display active candidate and ask
+:: Display active candidate
 for /f "tokens=*" %%a in ('node -e "try { const p = require('./job-skill/profile.json'); console.log(p.identity.full_name + ' (' + p.identity.email + ')'); } catch(e) { console.log('Unknown'); }"') do set ACTIVE_CANDIDATE=%%a
 
 echo [OK] Active Candidate Profile: !ACTIVE_CANDIDATE!
-echo.
-set /p USER_CHOICE="Keep current candidate profile? [Y to proceed, or 'new' to onboard someone else]: "
-if /i "!USER_CHOICE!"=="new" goto DO_ONBOARD
-if /i "!USER_CHOICE!"=="n" goto DO_ONBOARD
 
-goto POST_CHECK
-
-:DO_ONBOARD
-echo.
-node job-skill\onboard.js
-if %ERRORLEVEL% neq 0 (
-    echo [ERROR] Candidate onboarding failed.
-    exit /b %ERRORLEVEL%
-)
-
-:POST_CHECK
-:: 6. Verify master CV exists
+:: 5. Verify master CV exists
 for /f "tokens=*" %%c in ('node -e "try { const p = require('./job-skill/profile.json'); console.log(p.cv.existing_pdf || ''); } catch(e) { console.log(''); }"') do set CV_PATH=%%c
 
 if exist "!CV_PATH!" (
@@ -75,19 +56,12 @@ if exist "!CV_PATH!" (
     echo [WARNING] Configured Master CV was not found at !CV_PATH!. Please place your PDF in career-ops/
 )
 
-:: 7. Initialize/Check guardian session
 echo.
-echo [INFO] Current Guardian Session:
-node job-skill\guardian.js session
-echo.
-
 echo ===================================================
 echo   Initialization Complete! Project is ready.
 echo ===================================================
 echo.
 echo Useful commands:
-echo   Launch debugging browser:        job-skill\run-brave.bat
-echo   Re-run onboarding for someone:   init.cmd --new
-echo   Guardian CLI ledger:             node job-skill\guardian.js [session/reserve/record/applied]
+echo   Database inspection:             sqlite3.exe "job-skill\data\career.sqlite" ".tables"
 echo   Review operational protocols:    AGENTS.md
 echo.

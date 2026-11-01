@@ -1,5 +1,5 @@
 {
-  "_readme": "Candidate Truth Profile. Filled via onboard.js or agent onboarding interview. null means unknown: ask, never guess.",
+  "_readme": "Candidate Truth Profile template. Copy to profile.json and configure candidate facts. null means unknown: ask, never guess.",
   "identity": {
     "full_name": "Full Name",
     "first_name": "First Name",

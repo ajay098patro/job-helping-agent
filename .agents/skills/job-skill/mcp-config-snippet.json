@@ -1,10 +1,16 @@
 {
   "mcpServers": {
     "playwright": {
-      "command": "cmd",
+      "command": "npx",
       "args": [
-        "/c",
-        "cd /d c:\\job-search\\job-skill\\cv && npx -y @playwright/mcp@0.0.83 --cdp-endpoint=http://127.0.0.1:9222 --output-dir=c:/job-search/_pw-output"
+        "-y",
+        "@playwright/mcp@0.0.83",
+        "--browser=chromium",
+        "--executable-path=C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+        "--user-data-dir=C:\\Users\\Ajay_lap\\AppData\\Local\\BraveSoftware\\Brave-Browser\\PlaywrightProfile",
+        "--no-sandbox",
+        "--allow-unrestricted-file-access",
+        "--output-dir=c:\\job-search\\_pw-output"
       ]
     }
   }

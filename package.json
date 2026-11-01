@@ -4,11 +4,7 @@
   "description": "Autonomous multi-platform job application and recruitment outreach pipeline",
   "private": true,
   "scripts": {
-    "init": "init.cmd",
-    "onboard": "node job-skill/onboard.js",
-    "browser": "job-skill\\run-brave.bat",
-    "session": "node job-skill/guardian.js session",
-    "guardian": "node job-skill/guardian.js"
+    "init": "init.cmd"
   },
   "keywords": [
     "job-search",
@@ -20,4 +16,3 @@
   "author": "Ajay Kumar Patro",
   "license": "UNLICENSED"
 }
-

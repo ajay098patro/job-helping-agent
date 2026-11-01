@@ -41,6 +41,9 @@ temp/
 *.swp
 *.swo
 *~
+*_live_test.txt
+mission_*.txt
+test_*.txt
 
 # --- Local SQLite Databases & Session State ---
 *.sqlite

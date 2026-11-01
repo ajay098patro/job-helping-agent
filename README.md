@@ -1,16 +1,19 @@
 # Job Search & Outreach Automation Engine
 
-Autonomous multi-platform job application and recruitment outreach pipeline tailored for GIS, Geospatial Engineering, and Python Backend roles across India and Remote.
+Autonomous multi-platform job application and recruitment outreach pipeline tailored for Data Engineering, Database Engineering, and Python Backend roles across India and Remote.
 
-The engine automates discovery, eligibility filtering, candidate rate limiting, ATS application submission, and personalized recruiter outreach while strictly adhering to candidate truth and safety boundaries.
+The engine automates discovery, dynamic recruitment source evaluation, eligibility filtering, candidate rate limiting, ATS application submission, and personalized recruiter outreach while strictly adhering to candidate truth, Markdown operational protocols, and safety boundaries.
 
 ---
 
 ## Key Features
 
-- **Multi-Platform Application**: Native automation for Naukri, LinkedIn Easy Apply, and Direct Enterprise ATS Portals (SmartRecruiters, Workday, Keka, Oracle Cloud HCM, iCIMS, Lever, Greenhouse).
-- **Guardian Rate Limiter & Audit Ledger**: Enforces daily caps, action reservations (`reserve`), deduplication, rate limits, and SQLite transaction logging.
-- **Dynamic Onboarding Wizard**: Completely candidate-agnostic. Anyone (e.g., Ankush or a new candidate) can clone the repo and run an interactive onboarding interview to configure their own profile.
+- **Multi-Platform Application**: Native automation for Naukri, Instahyre, Direct Enterprise ATS Portals (Greenhouse, Lever, SmartRecruiters, Workday, Keka, Oracle Cloud HCM, iCIMS), and LinkedIn manual execution queue.
+- **Dynamic Job-Source Discovery Engine**: Persistent tracking and periodic evaluation of recruitment sources (Naukri, LinkedIn, Instahyre, Cutshort, Wellfound, Hirist, Google Jobs) using a 5-factor scoring model.
+- **Granular Application Lifecycle & Evidentiary Standard**: Distinct states (`discovered`, `shortlisted`, `application_prepared`, `awaiting_user_info`, `awaiting_authorization`, `submitted`, `submission_confirmed`, `rejected_or_closed`, `failed`) requiring verifiable confirmation evidence before marking `submission_confirmed`.
+- **Safe Execution Concurrency & State Locking**: Automated concurrency lock management and stale-lock recovery via `execution_state` table in `career.sqlite`.
+- **Guardian Operational Protocol & Audit Ledger**: Enforces daily caps, action reservations (`INSERT INTO actions`), deduplication, rate limits, and SQLite transaction logging with database trigger enforcement.
+- **Candidate Truth Configuration**: Candidate-agnostic architecture. Uses `job-skill/profile.template.json` as the pristine schema template and `job-skill/profile.json` as the active truth profile.
 - **Queued Job Prefill Protocol**: For portals requiring SSO or visual CAPTCHA, the engine opens dedicated browser tabs, pre-fills all candidate fields and resumes, and presents an actionable queue for 1-click completion.
 - **Ultra-Slim Recruiter Cold Outreach**: Automated high-density cold emails dispatched via official webmail with resume attachments and zero-spam rest gates.
 - **Zero-Emoji Professional Standard**: Strict formatting compliance across all outreach text, connection notes, and database records.
@@ -20,8 +23,9 @@ The engine automates discovery, eligibility filtering, candidate rate limiting, 
 ## Prerequisites
 
 - **Operating System**: Windows
-- **Node.js**: v22 or higher (Node 24 recommended; leverages native `node:sqlite` with zero npm package dependencies)
-- **Browser**: Brave Browser (or Google Chrome) started with remote debugging enabled on port `9222`
+- **Node.js**: v22 or higher (Node 24 recommended)
+- **Database CLI**: SQLite CLI 3.54.1 (64-bit) for inspection and administration
+- **Browser**: Brave Browser automatically launched and managed via Playwright MCP using persistent profile (`PlaywrightProfile`)
 
 ---
 
@@ -40,42 +44,43 @@ This script automatically:
 1. Validates the Node.js runtime.
 2. Ensures the `job-skill\data\` directory exists.
 3. Bootstraps `job-skill\data\career.sqlite` from `job-skill\schema.sql` if no database exists.
-4. Checks the candidate profile (`job-skill\profile.json`) and master CV (`career-ops/*.pdf`).
-5. Displays the active Guardian session action counter.
+4. Ensures candidate profile (`job-skill\profile.json`) is populated.
+5. Verifies the master CV PDF exists.
 
-### 2. Onboard a New Candidate (e.g., Ankush)
+### 2. Candidate Onboarding & Configuration
 
-To configure the engine for a new candidate or switch profiles, choose either method:
+To configure the engine for a new candidate or adjust profile facts:
 
-#### Method A: Interactive Terminal Wizard
-Run:
-```cmd
-init.cmd --new
-```
-*(or `npm run onboard` / `node job-skill\onboard.js`)*
+1. Copy `job-skill/profile.template.json` to `job-skill/profile.json` (if setting up fresh).
+2. Populate the required truth sections:
+   - **Identity & Contact**: Full Name, Email, Phone, Location, LinkedIn URL.
+   - **Work Facts**: Total experience years (2.5 Yrs), Current CTC, Expected CTC range, Notice period, Current Employer.
+   - **Target Roles**: Primary role hierarchy (Data Engineer > Database Engineer > Python Developer).
+   - **Technical Skills**: Core technical stack and database/ETL specializations.
+   - **Location Preferences**: Primary South hubs (Hyderabad, Bengaluru, Chennai, Remote) and relocation parameters.
+   - **CV File**: Path to active PDF resume in `career-ops/`.
+3. Alternatively, ask the AI agent in chat to configure or update candidate parameters, and the agent will update `profile.json`, `career.sqlite` answers, and `AGENTS.md` synchronously.
 
-The wizard walks through:
-- Candidate identity and contact details (name, email, phone, location, LinkedIn, GitHub).
-- Master CV selection from `career-ops/`.
-- Compensation truth (Current CTC, Expected CTC range, Notice period).
-- Target roles and 4–6 core technical skills.
-- Location and relocation preferences.
-- Automatically writes `job-skill\profile.json`, updates `career.sqlite` answers, and synchronizes `AGENTS.md`.
+### 3. Pure AI Agent Autonomous Execution
 
-#### Method B: Autonomous Agent Interview (via AI Agent)
-In chat, simply tell the AI agent:
-> *"Run init for Ankush"* or *"Onboard a new candidate"*
+The system operates on a **Pure AI Agent Architecture** (Zero Script-Based Automation):
+- **Candidate Truth & Inputs**: `job-skill/profile.json`, `career-ops/Ajay_Patro_CV.pdf`, and Markdown operational policies.
+- **AI Agent (The Worker)**: Evaluates pages dynamically, formulates queries, judges vacancy fit against Ajay's 2.5 yrs experience truth, navigates ATS forms, and drafts communications. No hardcoded scrapers or decision scripts.
+- **Persistent Memory**: `job-skill/data/career.sqlite` records all discovered vacancies, investigated companies, evaluated sources, and application actions using native `sqlite3.exe`.
 
-The agent will request the candidate's CV, parse verifiable career evidences, ask clarifying questions until satisfied, and configure all pipeline files automatically.
-
-### 3. Launch Debugging Browser
-
-To enable browser automation via Playwright / CDP:
+To execute an autonomous mission outside the interactive chat session, the agent CLI (OpenAI Codex CLI) is invoked directly:
 
 ```cmd
-job-skill\run-brave.bat
+codex exec --dangerously-bypass-approvals-and-sandbox -C C:\job-search - < mission.txt
 ```
-*(or `npm run browser`)*
+
+### 4. Run the Validation Test Suite
+
+To verify database schema, triggers, and qualification gate integrity:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "job-skill\test_validation.ps1"
+```
 
 ---
 
@@ -88,59 +93,50 @@ job-search/
 ├── AGENTS.md                   # Operational rules, candidate truth, and safety guardrails
 ├── career-ops/                 # Candidate resume and career assets
 │   └── Ajay_Patro_CV.pdf       # Active master CV
-├── init.cmd                    # One-command project initializer and candidate switcher
+├── init.cmd                    # One-command project initializer and environment validator
 ├── package.json                # Project script shortcuts
 ├── README.md                   # Complete project documentation
 └── job-skill/                  # Core automation engine
-    ├── boards.md               # Platform-specific selectors and application guidelines
+    ├── boards.md               # Dynamic sources catalog and platform-specific guidelines
     ├── cv/                     # LaTeX CV source templates (master.tex)
-    ├── guardian.js             # Rate limiter, ledger, and action reservation CLI
-    ├── onboard.js              # Interactive candidate onboarding wizard
+    ├── data/
+    │   └── career.sqlite       # Authoritative SQLite production database
+    ├── migrations/             # Database migrations (001_dynamic_sources_and_execution.sql)
     ├── pillars.md              # 5 Workflow pillars: Connect, First Message, Reply, Apply, Track
     ├── profile.json            # Active candidate truth profile & messaging templates
     ├── profile.template.json   # Pristine candidate profile schema template
-    ├── run-brave.bat           # Remote debugging browser launcher script
     ├── schema.sql              # Complete SQLite database schema & triggers
-    └── SKILL.md                # Agent instruction set and execution procedures
+    ├── SKILL.md                # Agent instruction set and execution procedures
+    └── test_validation.ps1     # 16-point automated test validation suite
 ```
 
 ---
 
-## Guardian CLI Reference
+## Dynamic Source Discovery & Scoring
 
-The Guardian ledger (`job-skill/guardian.js`) regulates all actions and records audit trails:
+Recruitment sources are tracked dynamically in the `sources` table and evaluated along five dimensions:
+- **Relevance (25%)**: Alignment with Data Engineer / Database Engineer / Python Developer roles.
+- **Freshness (20%)**: Recency of job postings.
+- **Accessibility (20%)**: Clean application flow without hostile bot barriers.
+- **Uniqueness (15%)**: Ratio of direct company listings vs re-syndicated posts.
+- **Listing Quality (20%)**: Clear salary bands, required experience brackets, and tech stack details.
 
-| Command | Syntax | Description |
-|---|---|---|
-| `session` | `node job-skill/guardian.js session` | Inspect current session action count |
-| `reserve` | `node job-skill/guardian.js reserve <type> [job_id]` | Reserve an action (`apply_naukri`, `apply_linkedin`, `apply_portal`, `email`, `connect`, `message`) |
-| `record` | `node job-skill/guardian.js record "<company>" "<title>" "<url>" <fit_score> "<board>" "<status>"` | Record a visited job listing in the database |
-| `applied` | `node job-skill/guardian.js applied <job_id>` | Mark a job as successfully applied in the database |
-
----
-
-## Operational Guardrails & Behavioral Rules
-
-All agent and automation behavior is governed by [`AGENTS.md`](AGENTS.md):
-
-1. **Zero Emojis**: Strictly prohibited in outreach, notes, messages, and records.
-2. **Dedicated Tab Protocol**: Never navigate, reuse, or hijack existing user browsing tabs. Always open dedicated tabs (`await context.newPage()`) and close them upon task completion.
-3. **Mandatory History Inspection & Rest Gate**: Never message without inspecting the full thread transcript. Reactions, closures, and acknowledgments are hard stops. Outbound messages are only allowed for explicit, unanswered recruiter questions.
-4. **Candidate Truth Integrity**: Absolute honesty regarding CTC, notice period, work authorization, and technical experience. Never fabricate credentials.
-5. **Guardian Record Boundary (H18)**: `guardian record` must be invoked once per job page actually visited and inspected in the browser.
-6. **Queued Job Opening & Prefill Protocol (Rule 11)**: For jobs in `needs_input`, dedicated tabs are opened and prefilled autonomously so the user only needs to complete final authentication or CAPTCHA.
+Sources are classified into:
+- `promoted`: Top-yield portals (e.g. Naukri.com, score: 90).
+- `active`: Verified platforms (Cutshort, Instahyre, LinkedIn, Wellfound, Hirist, Google Jobs).
+- `deprioritized`: Low-yield or misleading aggregators (e.g. GetMeReferred.com, score: 57).
 
 ---
 
-## Supported Boards & ATS Systems
+## Granular Application Lifecycle & Evidentiary Standard
 
-| Platform | Automation Level | Route |
-|---|---|---|
-| **Naukri.com** | 100% Autonomous | 1-Click Apply & ACP Redirects |
-| **LinkedIn** | Autonomous | Easy Apply (with daily submission cap handling) |
-| **SmartRecruiters** | 100% Autonomous | Shadow-DOM form fill, CV upload, confirmation |
-| **Keka ATS** | Autonomous Prefill | Full form prefilled + CV attached; stops at CAPTCHA |
-| **Workday** | Autonomous Prefill | Navigates to candidate sign-in / registration with email prefilled |
-| **Oracle Cloud HCM** | Autonomous Prefill | Navigates directly to candidate email submission step |
-| **iCIMS** | Autonomous Prefill | Navigates to login iframe with candidate email prefilled |
-| **Recruiter Webmail** | Autonomous Dispatch | Dispatches ultra-slim cold email via Outlook with verified CV attachment |
+```text
+discovered -> shortlisted -> application_prepared -> submitted -> submission_confirmed
+                                                  \-> awaiting_user_info (SSO / CAPTCHA)
+                                                  \-> awaiting_authorization (Approval)
+                                                  \-> failed / rejected_or_closed
+```
+
+- **`submission_confirmed`**: Requires explicit verifiable proof in `submission_evidence` (portal confirmation message, confirmation ID, or dashboard listing).
+- **`awaiting_user_info`**: Queued for candidate manual input (SSO login, CAPTCHA).
+- **`awaiting_authorization`**: Queued for candidate review and approval before outreach dispatch.
